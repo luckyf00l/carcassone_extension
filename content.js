@@ -192,5 +192,12 @@ new MutationObserver(() => {
 window.carcassonneTrackerDebug = function() {
   const tiles = document.querySelectorAll('[id^="tile_"]');
   console.log(`Found ${tiles.length} tiles:`, Array.from(tiles).map(t => t.id));
+  tiles.forEach(tile => {
+    console.log(`Tile ${tile.id}:`, {
+      visible: tile.offsetParent !== null,
+      display: getComputedStyle(tile).display,
+      position: tile.getBoundingClientRect()
+    });
+  });
   return tiles;
 };
