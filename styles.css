@@ -1,104 +1,87 @@
-/* Matrix-inspired theme */
-@font-face {
-  font-family: 'Matrix';
-  src: url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-}
-
-body {
-  font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 10px;
-  width: 320px;
-  background-color: #000000;
-  color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
-}
-
-.container {
-  background-color: rgba(0, 20, 0, 0.9);
-  border: 1px solid #00ff00;
-  border-radius: 0;
-  padding: 10px;
-  box-shadow: 0 0 10px #00ff00;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Matrix digital rain animation in the background */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-              repeating-linear-gradient(0deg, 
-                transparent 0,
-                rgba(0, 255, 0, 0.1) 1px,
-                transparent 2px);
-  z-index: -1;
-  opacity: 0.3;
-}
-
-h1 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
-  border-bottom: 1px solid #00ff00;
-  padding-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.tile-groups {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.tile-group {
-  background-color: rgba(0, 20, 0, 0.7);
-  border: 1px solid #00ff00;
-  padding: 8px;
-  box-shadow: 0 0 5px #00ff00 inset;
-  transition: all 0.3s ease;
-}
-
-.tile-group:hover {
-  background-color: rgba(0, 40, 0, 0.8);
-  box-shadow: 0 0 10px #00ff00 inset;
-}
-
-.tile-group h2 {
-  font-size: 14px;
-  margin: 0 0 5px 0;
-  text-align: center;
-  color: #00ff00;
-  font-weight: normal;
-  border-bottom: 1px dotted #00ff00;
-  padding-bottom: 3px;
-  letter-spacing: 1px;
-}
-
-.counter {
-  display: flex;
-  justify-content: space-between;
-}
-
-.counter p {
-  margin: 5px 0;
-  font-size: 13px;
-  font-family: 'Courier New', monospace;
-}
-
-/* For the numbers to stand out more */
-.counter span {
-  font-weight: bold;
-  font-size: 14px;
-  background-color: rgba(0, 50, 0, 0.7);
-  padding: 2px 5px;
-  border-radius: 3px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carcassonne Tile Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Carcassonne Tracker</h1>
+    
+    <div class="balance-card">
+      <div>
+        <div class="balance-title">Tiles Played</div>
+        <div class="balance-value">0 / 72</div>
+      </div>
+      <div class="balance-icon">
+        <i class="fas fa-puzzle-piece"></i>
+      </div>
+    </div>
+    
+    <div class="section-title">Tile Groups</div>
+    
+    <div class="tile-groups">
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 1-12</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played1" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining1" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+      
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 13-24</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played2" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining2" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+      
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 25-36</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played3" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining3" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+      
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 37-48</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played4" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining4" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+      
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 49-60</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played5" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining5" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+      
+      <div class="tile-group">
+        <div class="tile-group-header">
+          <h2 class="tile-group-title">Tiles 61-72</h2>
+        </div>
+        <div class="counter">
+          <p class="counter-item">Played: <span id="played6" class="counter-value counter-played">0</span></p>
+          <p class="counter-item">Remaining: <span id="remaining6" class="counter-value counter-remaining">12</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
